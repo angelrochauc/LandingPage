@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vinos Dona Ana</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
+</head>
+
+<body>
+    <nav class="zone blue sticky">
+        <div><img class="logo zone" src="imagenes/logo.png"></div>
+        <ul class="main-nav">
+            <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a href="">Productos</a></li>
+            <li><a href="">Nosotros</a></li>
+            <li class="nav_img"><img src="imagenes/whatsapp.png">&nbsp;<img src="imagenes/inst.png">&nbsp;<img src="imagenes/face.png"></li>
+            <li><a class="boton_compra" href="">Compra Ahora</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="coverText">
+            <div class="text_container">
+                <p>
+                <h1 style="text-align: center;">Nuestra Historia</h1>
+                </p>
+                <p>En Vinos Do&ntilde;a Ana llevamos m&aacute;s de 17 a&ntilde;os producciendo vinos exclusivos para Colombia. Nos encanta el vino y queremos llevarte botellas incre&iacute;bles que no encuentras en supermercados.</p>
+                <p>Llevamos tu pedido a la puerta de tu casa en Bogot&aacute; y Cali las 24 horas, sin costo adicional.</p>
+                <center>
+                    <video id="videoVinos" src="imagenes/comercialVino.mp4" width="450" height="300" controls muted autoplay loop></video>
+                    <img id="imagenVideo" src="imagenes/portadaVino.jpg" style="display: none; margin-top: 40px; height:250px;">
+                </center>
+            </div>
+            <div class="form_container">
+                <h3>&iquest;Te gustar&iacute;a cononocer m&aacute;s sobre nuestros productos?</h3>
+                <p>&iexcl;No dudes en contactanos!</p>
+                <p>Deja acontinuaci&oacute;n tus datos y con gusto nos comunicamos contigo</p>
+                <form class="contact_form">
+                    <input type="text" placeholder="Nombre" class="text-input">
+                    <input type="text" placeholder="Tel&eacute;fono" class="text-input">
+                    <input type="text" placeholder="Email" class="text-input">
+                    <p>Tu Mensaje</p>
+                    <textarea name="message" rows="7" cols="50" class="text-input"></textarea><br>
+                    <a href="#" class="form-input-submit">Quiero Probar!</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="zone blue grid-wrapper">
+        <div class="card zone">
+            <img src="imagenes/csauvignon.png">
+            <div class="text">
+                <h1>Vino Tinto Cavernet Sauvignon</h1>
+                <p>Esta es la uva que goza mas fama actualmente debido a su complejidad y cuerpo. Es una uva originaria
+                    de Francia y es el resultado de una hibridaci&oacute;n entre Cavernet Frank y Sauvignon Blanc originaria de
+                    burdeos Francia.</p>
+            </div>
+            <div><button>Comprar Ahora</button></div>
+        </div>
+        <div class="card zone">
+            <img src="imagenes/pettite.png">
+            <div class="text">
+                <h1>Vino Tinto con Petite Sirah</h1>
+                <p>Siendo una uva de tintes p&uacute;rpuras, elabora vinos de taninos marcados y sabores afrutados recordando a
+                    grosellas, moras silvestres, frambuesas, canela y clavo.</p>
+
+            </div>
+            <div><button>Comprar Ahora</button></div>
+        </div>
+        <div class="card zone"><img src="imagenes/monastrell.png">
+            <div class="text">
+                <h1>Vino Tinto con Monastrell</h1>
+                <p>Es de origen espa&ntilde;ol muy fresco y vers&aacute;til. Es una uva excelente para combinarse con otros tipos de
+                    uvas. ya que le da estructura y potencia a los vinos d&aacute;ndole un color rub&iacute; intenso y variados aromas
+                    frutales.Es un vino ideal para la crianza en barrica prolongada debido a su alta cantidad de taninos
+                </p>
+
+            </div>
+            <div><button>Comprar Ahora</button></div>
+        </div>
+        <div class="card zone"><img src="imagenes/pinotnoir.png">
+            <div class="text">
+                <h1>Vino Tinto Pinot Noir</h1>
+                <p>Es una uva muy delicada debido a que hay grandes diferencias entre la misma cepa de uvas en cuanto a
+                    color y estilo. Se debe a cambios en el suelo o la manera de cultivo con la que sea tratada.</p>
+            </div>
+            <div><button>Comprar Ahora</button></div>
+        </div>
+    </div>
+    <footer>
+        <div class="f_header">
+            <p>Promovemos el consumo responsable de Vinos y Destilados. Productos de Gran Calidad y con el Mejor Sabor
+                de Colombia.</p>
+        </div>
+        <div>
+            <p>
+                NIT: 890.916.575-4<br>
+                Direcci&oacute;n de notificaci&oacute;n judicial f&iacute;sica: Carrera 43A No. 25A - 45<br>
+                Correo electr&oacute;nico: contacto@vinosdo&ntilde;aana.com.co<br>
+                Celular: +57 316 000 000<br>
+            </p>
+        </div>
+        <div>
+            <iframe width="90%" height="100" style="border:0;"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3976.6938709470096!2d-74.06808588538553!3d4.648584596623207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1645394440049!5m2!1ses!2sco"></iframe>
+        </div>
+    </footer>
+    </div>
+
+</body>
+
+<script>
+    var v = document.getElementById("videoVinos");
+    var i = document.getElementById("imagenVideo");
+
+    v.addEventListener("timeupdate", mostrarImg);
+
+    function mostrarImg() {
+        if (v.currentTime >= 33) {
+            v.style.display = 'none';
+            i.style.display = 'block';
+        }else{
+            v.style.display = 'block';
+            i.style.display = 'none';
+        };
+    };
+
+</script>
+
+</html>

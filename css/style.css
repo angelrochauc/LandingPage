@@ -1,0 +1,324 @@
+/*
+    Regla general: use la cuadrícula cuando tenga vistas similares a una cuadrícula (como tarjetas sa)
+    como tablas, tarjetas, álbumes o cualquier cosa donde necesitemos manipular diferentes elementos en columnas o filas
+    En todos los demás casos de uso, considere usar flex.
+
+    La siguiente es una gran plantilla para hacer DISEÑOS de página. Desde aquí puede continuar fácilmente con su propio proyecto.
+*/
+
+/*  Restablecimiento del margen ya que algunos navegadores tienen su propio margen establecido */
+body {
+    margin: 0 auto;
+    font-family: Helvetica;
+    background: #522e38;
+}
+
+.zone {
+    color:#FFF;
+    font-size:2em;
+    border-radius:4px;
+    transition: all 0.3s linear;
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+/***********************************************************************
+ *  Nav Bar
+ **********************************************************************/
+/* 
+    use flex para que tengamos una fila de dirección según sea necesario para el encabezado.
+    desde que creamos <nav> queremos eliminar los puntos (estilo de lista).
+    nuevamente, queremos eliminar el margen establecido por div y restablecerlo para que el margen: 0
+*/
+.main-nav {
+    display: flex; /*especifica si un elemento es tratado como block or inline element*/
+    list-style: none;
+    margin: 0;
+    font-size: 0.7em;
+}
+
+a:hover {
+    color: #8a2846;
+}
+
+/*
+    Al cambiar el tamaño del ancho, vemos un corte de navegación, por lo que debemos modificar cómo se verá cuando el ancho sea más pequeño.
+*/
+@media only screen and (max-width: 600px) {
+    .main-nav {
+        font-size: 0.5em;
+        padding: 0;
+    }
+}
+
+/*
+    esto empuja 'Compra Ahora' completamente hacia la derecha.
+    margin-left auto, crea automáticamente un margen izquierdo máximo para el div
+*/
+
+.boton_compra {
+    background-image: linear-gradient(to right, #d89797 0%, #f5f5f6  51%, #d89797  100%);
+    border-radius: 2em;
+    background-clip: padding-box;
+    padding: 10px;
+    color: #522e38;
+    font-weight: bold;
+    transition: 0.5s;
+    background-size: 200% auto;
+}
+
+.boton_compra:hover {
+    color: #ffffff;
+    background-position: right center;
+    text-shadow: 1px 1px 2px black;
+}
+
+.nav_img {
+    margin-left: auto;
+    padding: 10px;
+}
+
+.nav_img > img {
+    height: 40px;
+}
+
+/*
+    Después de configurar los estilos anteriores, vemos que todos los elementos de la lista de navegación están juntos.
+    Así que queremos crear un relleno entre ellos.
+*/
+li {
+    padding: 20px;
+}
+
+a {
+    color: #f5f5f6;
+    text-decoration: none;
+}
+
+/*
+    Para que la navegación sea fija, establecemos una posición fija. Top 0 es por lo que la posición está en la parte superior de la página.
+    Después de configurar esto, vemos que el diseño no se ajusta al ancho completo, por lo que lo configuramos al 100%.
+*/
+.sticky {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 150px;
+    z-index: 999;
+    border-radius:50%;
+    box-shadow: 3px 3px 3px 3px #ffffff;
+}
+
+/***********************************************************************
+ *  Cover
+ **********************************************************************/
+ /*
+    Usamos flex porque queremos mantener las cosas simples (solo centrar el contenido).
+    Después de configurar flex, justify-content centra el contenido horizontalmente (eje X) dentro del contenedor
+    y align-items centran verticalmente (eje Y) finalmente, vh es "altura de la vista", y de 0% a 100% describe
+    qué parte del navegador de pantalla debe completarse.
+    A medida que cambiamos la altura de la pantalla, la altura se ajustará automáticamente al 100 %
+ */
+.container {
+    /* vh = altura de la vista. Hacemos esto para asegurarnos de que el banner ocupe toda la vista */
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../imagenes/background.jpg);
+    background-size: cover;
+}
+
+/*
+    Configuramos la imagen dentro del diseño de portada.
+*/
+.cover {
+    width:100%;
+    height: auto;
+}
+
+/*
+    Nos gustaría que el texto apareciera en el centro de la imagen y encima de ella.
+ */
+.coverText {
+    position: absolute;
+    top: 17%;
+    color: #fff7e7;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 90%;
+    justify-content: space-around;
+}
+
+.text_container {
+    background-color: rgb(82, 46, 56, 0.6);
+    border-radius:8px;
+    padding: 20px 30px 200px 30px;
+    margin: 0px 10px;
+    width: 60%;
+    height: 320px;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px black;
+    text-align: justify;
+}
+
+.form_container {
+    background-color: #FFF7E7;
+    padding: 20px 30px;
+    border-radius:8px;
+    color: #7A0045;
+    width: 20%;
+    height: 500px;    
+    text-align: center;
+}
+
+.contact_form{
+    display: grid;
+    grid-template-columns: [single-column] 100%;
+}
+
+.text-input{
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+}
+
+.form-input-submit{
+    background-image: linear-gradient(to right, #d89797, #820933);
+    width: 150px;
+    height: 30px;
+    border-radius: 2em;
+    place-self: center;
+    padding-top: 10px;
+}
+
+
+
+/* rem = relativo al tamaño de fuente del elemento raíz. Esto se debe a que hemos creado diferentes tamaños de fuente para variar según la pantalla,
+    así que esto también cambiará esto automáticamente */
+
+
+
+/***********************************************************************
+ *  Body card grid
+ **********************************************************************/
+/*
+    Como se describe en la parte superior de la página, queremos crear una cuadrícula de bloques, así que usaremos la cuadrícula esta vez.
+    grid-template-columns establece el estilo de cada columna (o div). FYI: si tuviéramos que establecer solo 1fr, veríamos solo un bloque por columna.
+    Así que lo configuramos para que se repita (al igual que escribir 1fr 1fr ...) y autocompletar la pantalla con cualquier cosa, desde un mínimo de 350 px 
+    hasta pantalla completa (1fr)
+    Finalmente, establecemos un espacio de cuadrícula de 10px (como relleno)
+*/
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 10px;
+    align-items: stretch;
+}
+
+/*
+    Bastante sencillo, para cada tarjeta en la cuadrícula establecemos su margen en consecuencia.
+*/
+.card {
+    background-color: #FFF7E7;
+    margin: 50px;
+}
+
+/*
+    Queremos asegurarnos de que la imagen llene todo el cuadro, por lo que establecemos el ancho al 100%.
+    Solo queremos manipular imágenes dentro del cuadro de clase, por lo que lo configuramos con la siguiente sintaxis.
+*/
+
+.card > img {
+    max-width: 100%;
+    height: 250px;
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card h1 {
+    font-size: 1.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+/*
+    Establecemos el relleno alrededor del texto dentro de la tarjeta (a diferencia de la imagen que debe extenderse al 100% del ancho)
+*/
+.card > .text {
+    padding: 0 20px 20px;
+    color: #7A0045;
+    text-align: center;
+    height: 45%;
+}
+
+/*
+    Finalmente, configuramos el diseño del botón que aparece dentro de cada tarjeta.
+ */
+button {
+    cursor: pointer;
+    background: #d6d2d2;
+    border: 0;
+    font-size: 1rem;
+    color: white;
+    padding: 10px;
+    width: 70%;
+    display: block;    
+    margin: auto auto 20px auto;
+}
+
+button:hover {
+    background-color: #8a2846;
+}
+
+/***********************************************************************
+ *  Footer
+ **********************************************************************/
+.f_header {
+    grid-column: 1 / span 2;
+    padding: 0 10px;
+    margin: 0;
+}
+
+footer {
+    display: grid;
+    background-color: #444;
+    color:#FFF;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px 1fr;
+    align-content: space-evenly;
+    grid-gap: 2px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.img_footer{
+    height: 15px;
+}
+
+/***********************************************************************
+ *  Blue Background
+ **********************************************************************/
+.blue {
+    background: #522e38;
+}
+
